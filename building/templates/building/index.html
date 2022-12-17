@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Спортзал Сила</title>
+	<link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+	<header class="header">
+		<div>
+		<img class="logo" src="{% static 'images/logo.jpg' %}">
+		<h2 class="logo_h2"><b>Спортзал Сила</b></h2>
+		</div>
+		<nav><ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="#obr1">Заказать абонемент</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="div_1">
+		<h1 class="h1">В вашем распоряжении множество тренажоров</h1>
+		<h1 class="h11">И приятный дизайн зала</h1>
+		<div class="cssSlider">
+	<ul class="slides">
+		<li id="slide1"><img src="{% static 'images/img1.jpg' %}" alt="" /></li>
+		<li id="slide2"><img src="{% static 'images/img2.jpg' %}" alt="" /></li>
+		<li id="slide3"><img src="{% static 'images/img3.jpg' %}" alt="" /></li>
+		<li id="slide4"><img src="{% static 'images/imge4.jpg' %}" alt="" /></li>
+		<li id="slide5"><img src="{% static 'images/img5.jpg' %}" alt="" /></li>
+	</ul>
+	<ul class="thumbnails">
+		<li><a href="#slide1"><img src="{% static 'images/img1.jpg' %}" /></a></li>
+		<li><a href="#slide2"><img src="{% static 'images/img2.jpg' %}" /></a></li>
+		<li><a href="#slide3"><img src="{% static 'images/img3.jpg' %}" /></a></li>
+		<li><a href="#slide4"><img src="{% static 'images/img4.jpg' %}" /></a></li>
+		<li><a href="#slide5"><img src="{% static 'images/img5.jpg' %}" /></a></li>
+	</ul>
+</div>
+
+	</div>
+	<div class="obr" id="obr1">
+
+		<h1 class="h1_obr">Для того чтобы  заказать абонемент напишите свое имя и номер телефона</h1>
+		<form  method = "POST">
+           		{% csrf_token %}
+   				<p> <input name="login" placeholder="Ваше имя"></p>
+   				<p><input type="tel" name="phone_number" list="tel-list" placeholder="+7 (999) 123-45-67" ></p>
+   				<p><input type="submit" value="Отправить"></p>
+		</form>
+	</div>
+
+</body>
+</html>
